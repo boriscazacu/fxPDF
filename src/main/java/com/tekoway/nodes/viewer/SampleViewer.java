@@ -1,12 +1,12 @@
-package eu.patrickgeiger.fxpdf.nodes.viewer;
+package com.tekoway.nodes.viewer;
 
-import eu.patrickgeiger.fxpdf.event.Parameter;
-import eu.patrickgeiger.fxpdf.event.ViewerEvent;
-import eu.patrickgeiger.fxpdf.event.ViewerEventHandler;
-import eu.patrickgeiger.fxpdf.nodes.PDFContent;
-import eu.patrickgeiger.fxpdf.nodes.PageChooser;
-import eu.patrickgeiger.fxpdf.nodes.ZoomTool;
-import eu.patrickgeiger.fxpdf.util.PDF;
+import com.tekoway.event.Parameter;
+import com.tekoway.event.ViewerEvent;
+import com.tekoway.event.ViewerEventHandler;
+import com.tekoway.nodes.PDFContent;
+import com.tekoway.nodes.PageChooser;
+import com.tekoway.nodes.ZoomTool;
+import com.tekoway.util.PDF;
 import javafx.application.Platform;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;

@@ -1,5 +1,8 @@
-package eu.patrickgeiger.fxpdf.util;
+package com.tekoway.util;
 
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import lombok.Getter;
 import lombok.NonNull;
 import org.apache.logging.log4j.LogManager;
@@ -35,8 +38,12 @@ public class PDF {
     /**
      * @param pdf The file to the pdf
      */
-    public PDF(@NonNull File pdf) throws IOException {
-        loadPDF(pdf);
+    public PDF(@NonNull File pdf) {
+        try {
+            loadPDF(pdf);
+        } catch (IOException e) {
+            throw new NullPointerException("EditablePDF editablePDF is null");
+        }
     }
 
     /**
@@ -88,6 +95,26 @@ public class PDF {
             LOGGER.error(e.getMessage());
             return null;
         }
+    }
+
+    public Image getPageImage(int pageNumber, float scaleFactor) {
+        BufferedImage pageImage = null;
+        try {
+            if (pageNumber <= getNumberOfPages()) {
+                if (scaleFactor >= 0.1) {
+                    pageImage = renderer.renderImage(pageNumber, scaleFactor);
+                } else {
+                    pageImage = renderer.renderImage(pageNumber);
+                }
+            } else return null;
+        } catch (Exception e) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setHeaderText(e.getMessage());
+            a.setTitle("Error in " + this.getClass().getName());
+            a.showAndWait();
+        }
+
+        return SwingFXUtils.toFXImage(pageImage, null);
     }
 
     /**

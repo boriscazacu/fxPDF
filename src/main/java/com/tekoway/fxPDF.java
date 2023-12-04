@@ -1,8 +1,8 @@
-package eu.patrickgeiger.fxpdf;
+package com.tekoway;
 
-import eu.patrickgeiger.fxpdf.nodes.viewer.AppearanceType;
-import eu.patrickgeiger.fxpdf.nodes.viewer.SampleViewer;
-import eu.patrickgeiger.fxpdf.util.PDF;
+import com.tekoway.nodes.viewer.AppearanceType;
+import com.tekoway.nodes.viewer.SampleViewer;
+import com.tekoway.util.PDF;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.FileChooser;

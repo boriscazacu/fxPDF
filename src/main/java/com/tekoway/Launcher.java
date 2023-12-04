@@ -1,4 +1,4 @@
-package eu.patrickgeiger.fxpdf;
+package com.tekoway;
 
 public class Launcher {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package eu.patrickgeiger.fxpdf.util;
+package com.tekoway.util;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

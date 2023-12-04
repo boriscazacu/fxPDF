@@ -1,6 +1,6 @@
-package eu.patrickgeiger.fxpdf.nodes.viewer;
+package com.tekoway.nodes.viewer;
 
-import eu.patrickgeiger.fxpdf.util.PDF;
+import com.tekoway.util.PDF;
 import javafx.embed.swing.JFXPanel;
 import org.junit.jupiter.api.*;
 

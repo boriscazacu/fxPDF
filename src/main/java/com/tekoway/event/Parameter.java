@@ -1,4 +1,4 @@
-package eu.patrickgeiger.fxpdf.event;
+package com.tekoway.event;
 
 /**
  * @author Patr1ick

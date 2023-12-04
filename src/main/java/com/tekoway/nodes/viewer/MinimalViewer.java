@@ -1,11 +1,11 @@
-package eu.patrickgeiger.fxpdf.nodes.viewer;
+package com.tekoway.nodes.viewer;
 
-import eu.patrickgeiger.fxpdf.event.Parameter;
-import eu.patrickgeiger.fxpdf.event.ViewerActionEvent;
-import eu.patrickgeiger.fxpdf.event.ViewerEvent;
-import eu.patrickgeiger.fxpdf.event.ViewerEventHandler;
-import eu.patrickgeiger.fxpdf.util.ImageTools;
-import eu.patrickgeiger.fxpdf.util.PDF;
+import com.tekoway.event.Parameter;
+import com.tekoway.event.ViewerActionEvent;
+import com.tekoway.event.ViewerEvent;
+import com.tekoway.event.ViewerEventHandler;
+import com.tekoway.util.ImageTools;
+import com.tekoway.util.PDF;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.CacheHint;
@@ -22,7 +22,6 @@ import lombok.Setter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.text.DecimalFormat;
 
 import static javafx.scene.input.KeyCombination.CONTROL_DOWN;
@@ -332,13 +331,9 @@ public class MinimalViewer extends Pane {
                 success = true;
                 var file = db.getFiles().get(0);
                 new Thread(() ->
-                        Platform.runLater(() -> {
-                            try {
-                                loadPDF(new PDF(file));
-                            } catch (IOException e) {
-                                LOGGER.error(e.getMessage());
-                            }
-                        })
+                    Platform.runLater(() -> {
+                        loadPDF(new PDF(file));
+                    })
                 ).start();
             }
             dragEvent.setDropCompleted(success);

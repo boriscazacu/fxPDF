@@ -1,4 +1,4 @@
-package eu.patrickgeiger.fxpdf.event;
+package com.tekoway.event;
 
 import javafx.event.Event;
 import javafx.event.EventType;

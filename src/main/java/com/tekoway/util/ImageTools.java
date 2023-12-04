@@ -1,4 +1,4 @@
-package eu.patrickgeiger.fxpdf.util;
+package com.tekoway.util;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;

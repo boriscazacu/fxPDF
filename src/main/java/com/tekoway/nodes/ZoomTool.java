@@ -1,10 +1,10 @@
-package eu.patrickgeiger.fxpdf.nodes;
+package com.tekoway.nodes;
 
-import eu.patrickgeiger.fxpdf.event.Parameter;
-import eu.patrickgeiger.fxpdf.event.ViewerEvent;
-import eu.patrickgeiger.fxpdf.event.ViewerEventHandler;
-import eu.patrickgeiger.fxpdf.nodes.viewer.AppearanceType;
-import eu.patrickgeiger.fxpdf.nodes.viewer.MinimalViewer;
+import com.tekoway.event.Parameter;
+import com.tekoway.event.ViewerEvent;
+import com.tekoway.event.ViewerEventHandler;
+import com.tekoway.nodes.viewer.AppearanceType;
+import com.tekoway.nodes.viewer.MinimalViewer;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

@@ -1,4 +1,4 @@
-package eu.patrickgeiger.fxpdf.nodes.viewer;
+package com.tekoway.nodes.viewer;
 
 /**
  * @author Patr1ick
