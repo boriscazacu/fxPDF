@@ -1,4 +1,4 @@
-package com.tekoway.util;
+package com.tekoway.fxpdf;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

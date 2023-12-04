@@ -1,6 +1,6 @@
 package com.tekoway.nodes.viewer;
 
-import com.tekoway.util.PDF;
+import com.tekoway.fxpdf.PDF;
 import javafx.embed.swing.JFXPanel;
 import org.junit.jupiter.api.*;
 

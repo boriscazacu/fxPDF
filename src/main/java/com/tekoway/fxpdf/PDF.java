@@ -1,4 +1,4 @@
-package com.tekoway.util;
+package com.tekoway.fxpdf;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.control.Alert;
@@ -42,7 +42,7 @@ public class PDF {
         try {
             loadPDF(pdf);
         } catch (IOException e) {
-            throw new NullPointerException("EditablePDF editablePDF is null");
+            throw new RuntimeException("Error on loading PDF: " + e.getMessage());
         }
     }
 

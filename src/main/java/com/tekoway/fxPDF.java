@@ -2,7 +2,7 @@ package com.tekoway;
 
 import com.tekoway.nodes.viewer.AppearanceType;
 import com.tekoway.nodes.viewer.SampleViewer;
-import com.tekoway.util.PDF;
+import com.tekoway.fxpdf.PDF;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.FileChooser;

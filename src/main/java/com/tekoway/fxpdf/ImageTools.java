@@ -1,4 +1,4 @@
-package com.tekoway.util;
+package com.tekoway.fxpdf;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;

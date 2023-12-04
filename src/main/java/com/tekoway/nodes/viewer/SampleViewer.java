@@ -6,7 +6,7 @@ import com.tekoway.event.ViewerEventHandler;
 import com.tekoway.nodes.PDFContent;
 import com.tekoway.nodes.PageChooser;
 import com.tekoway.nodes.ZoomTool;
-import com.tekoway.util.PDF;
+import com.tekoway.fxpdf.PDF;
 import javafx.application.Platform;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
