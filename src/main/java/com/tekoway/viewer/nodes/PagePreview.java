@@ -1,6 +1,6 @@
 package com.tekoway.viewer.nodes;
 
-import com.tekoway.fxpdf.PDF;
+import com.tekoway.util.PDF;
 import com.tekoway.viewer.Viewer;
 import javafx.application.Platform;
 import javafx.geometry.Pos;

@@ -1,6 +1,6 @@
 package com.tekoway.viewer;
 
-import com.tekoway.fxpdf.PDF;
+import com.tekoway.util.PDF;
 import com.tekoway.viewer.event.PageSwitchEvent;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -305,14 +305,17 @@ public class Viewer extends Pane {
 
     public void loadPDFasList() {
         new Thread(() -> {
-            Platform.runLater(() -> {
-				pdfList = new ImageView[pdf.getNumberOfPages()];
-				for (int i = 0; i < pdfList.length; i++) {
-					pdfList[i] = new ImageView(pdf.getPageImage(i, scaleFactor));
-					listVBox.getChildren().add(pdfList[i]);
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    pdfList = new ImageView[pdf.getNumberOfPages()];
+                    for (int i = 0; i < pdfList.length; i++) {
+                        pdfList[i] = new ImageView(pdf.getPageImage(i, scaleFactor));
+                        listVBox.getChildren().add(pdfList[i]);
 
-				}
-			});
+                    }
+                }
+            });
         }).start();
 
     }
@@ -329,42 +332,45 @@ public class Viewer extends Pane {
     }
 
     public void updateViewer() {
-        Platform.runLater(() -> {
-			if (viewerType == ViewerType.IMAGE) {
-				//Refresh page
-				currentPage = pdf.getPageImage(currentPageNumber, scaleFactor);
-				imageView.setImage(currentPage);
-				//Update buttons
-				if (currentPageNumber == 0) { // First Page
-					nextPageLeft.setDisable(true);
-					nextPageLeft.setGraphic(new ImageView(img_first_page));
-					if (currentPageNumber == pdf.getNumberOfPages() - 1) {
-						nextPageRight.setDisable(true);
-						nextPageRight.setGraphic(new ImageView(img_last_page));
-					} else {
-						nextPageRight.setDisable(false);
-						nextPageRight.setGraphic(new ImageView(img_right));
-					}
-				} else if (currentPageNumber == pdf.getNumberOfPages() - 1) { // Last Page
-					nextPageLeft.setDisable(false);
-					nextPageLeft.setGraphic(new ImageView(img_left));
-					nextPageRight.setDisable(true);
-					nextPageRight.setGraphic(new ImageView(img_last_page));
-				} else {
-					nextPageRight.setDisable(false);
-					nextPageRight.setGraphic(new ImageView(img_right));
-					nextPageLeft.setDisable(false);
-					nextPageLeft.setGraphic(new ImageView(img_left));
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                if (viewerType == ViewerType.IMAGE) {
+                    //Refresh page
+                    currentPage = pdf.getPageImage(currentPageNumber, scaleFactor);
+                    imageView.setImage(currentPage);
+                    //Update buttons
+                    if (currentPageNumber == 0) { // First Page
+                        nextPageLeft.setDisable(true);
+                        nextPageLeft.setGraphic(new ImageView(img_first_page));
+                        if (currentPageNumber == pdf.getNumberOfPages() - 1) {
+                            nextPageRight.setDisable(true);
+                            nextPageRight.setGraphic(new ImageView(img_last_page));
+                        } else {
+                            nextPageRight.setDisable(false);
+                            nextPageRight.setGraphic(new ImageView(img_right));
+                        }
+                    } else if (currentPageNumber == pdf.getNumberOfPages() - 1) { // Last Page
+                        nextPageLeft.setDisable(false);
+                        nextPageLeft.setGraphic(new ImageView(img_left));
+                        nextPageRight.setDisable(true);
+                        nextPageRight.setGraphic(new ImageView(img_last_page));
+                    } else {
+                        nextPageRight.setDisable(false);
+                        nextPageRight.setGraphic(new ImageView(img_right));
+                        nextPageLeft.setDisable(false);
+                        nextPageLeft.setGraphic(new ImageView(img_left));
 
-				}
-			} else if (viewerType == ViewerType.LIST) {
-				listVBox.getChildren().remove(pdfList);
-				for (int i = 0; i < pdfList.length; i++) {
-					pdfList[i] = new ImageView(pdf.getPageImage(i, scaleFactor));
-					listVBox.getChildren().add(pdfList[i]);
-				}
-			}
-		});
+                    }
+                } else if (viewerType == ViewerType.LIST) {
+                    listVBox.getChildren().remove(pdfList);
+                    for (int i = 0; i < pdfList.length; i++) {
+                        pdfList[i] = new ImageView(pdf.getPageImage(i, scaleFactor));
+                        listVBox.getChildren().add(pdfList[i]);
+                    }
+                }
+            }
+        });
 
     }
 

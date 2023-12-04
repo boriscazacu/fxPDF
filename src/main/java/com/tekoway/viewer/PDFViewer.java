@@ -1,6 +1,6 @@
 package com.tekoway.viewer;
 
-import com.tekoway.fxpdf.PDF;
+import com.tekoway.util.PDF;
 import com.tekoway.viewer.nodes.PageChooser;
 import com.tekoway.viewer.nodes.PagePreview;
 import javafx.application.Platform;

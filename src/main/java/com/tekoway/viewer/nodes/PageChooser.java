@@ -1,6 +1,6 @@
 package com.tekoway.viewer.nodes;
 
-import com.tekoway.fxpdf.PDF;
+import com.tekoway.util.PDF;
 import com.tekoway.viewer.Viewer;
 import com.tekoway.viewer.event.CustomEvent;
 import com.tekoway.viewer.event.PageSwitchEventHandler;
@@ -11,8 +11,9 @@ import javafx.scene.layout.HBox;
 
 public class PageChooser extends HBox {
 
-    private TextField textField;
     private Label label;
+    private TextField textField;
+
     private Viewer viewer;
     private PDF pdf;
 
